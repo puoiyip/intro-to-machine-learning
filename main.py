@@ -1,5 +1,6 @@
 import pandas as pd
 import GWCutilities as util
+import joblib
 
 pd.set_option('display.max_columns', None)
 pd.set_option('max_colwidth', None)
@@ -80,3 +81,7 @@ print(feature_importance) #higher number = more impact on decision
 import matplotlib.pyplot as plt 
 feature_importance.plot(kind='bar', title='Feature Importance')
 plt.show()
+
+#save the model for deployment
+joblib.dump(clf, "heart_disease_decision_tree.joblib")
+print("Model saved as heart_disease_decision_tree.joblib")

@@ -20,9 +20,14 @@ st.dataframe(original_data)
 #encoded dataframe
 df = joblib.load("heart_disease_dataframe.joblib") #loads encoded data
 st.subheader("Encoded Data")
-st.text("This text has been label encoded and one-label encoded. HeartDisease, GenHealth, Smoking, AlcoholDrinking, AgeCategory, and PhysicalActivity have all been label encoded. Sex and Race have been one-label encoded.")
+st.text("This text has been label encoded and one-label encoded. HeartDisease, GenHealth, Smoking, AlcoholDrinking, AgeCategory, and PhysicalActivity have all been label encoded. Sex and Race have been one-label encoded. Very few data came from individuals with heart disease, so the model was adjusted to give more priority to the minority class.")
 st.dataframe(df)
 
+#graph feature importance
+feature_importance = joblib.load("feature_importance.joblib") #loads feature importance dataframe
+st.subheader("Feature Importance")
+st.text("The bar chart below shows the distribution of feature importance, the impact of each variable on the model's predictions. ")
+st.bar_chart(feature_importance)
 
 #USER INPUT STUFF FOR NEW FEATURE
 

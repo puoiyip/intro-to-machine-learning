@@ -8,7 +8,17 @@ model = joblib.load("heart_disease_decision_tree.joblib")
 #set up page configuration (streamlit)
 st.set_page_config(page_title="Heart Disease Predictor")
 st.title("Heart Disease Predictor (made with Girls Who Code)")
+st.subheader("Notes About the Project")
 st.text("I created a decision tree that is intends on predicting the likelihood of a patient having heart disease based on a variety of health and demographic factors using data collected from 2020. This current project only shows the accuracy of my model (which was the extent of the project guided by Girls Who Code), but I want to use my model to predict the outome based on user inputs (this is a feature I'm currently working on).")
+
+#original data without encoding
+original_data = pd.read_csv("heartDisease_2020_sampling.csv")
+st.dataframe(original_data)
+
+#encoded dataframe
+df = joblib.load("heart_disease_dataframe.joblib") #loads encoded data
+st.dataframe(df)
+
 
 #USER INPUT STUFF FOR NEW FEATURE
 

@@ -13,10 +13,14 @@ st.text("I created a decision tree that is intends on predicting the likelihood 
 
 #original data without encoding
 original_data = pd.read_csv("heartDisease_2020_sampling.csv")
+st.subheader("Original Data")
+st.text("This is the original data, collected from a Kaggle dataset that used CDC survey data.")
 st.dataframe(original_data)
 
 #encoded dataframe
 df = joblib.load("heart_disease_dataframe.joblib") #loads encoded data
+st.subheader("Encoded Data")
+st.text("This text has been label encoded and one-label encoded. HeartDisease, GenHealth, Smoking, AlcoholDrinking, AgeCategory, and PhysicalActivity have all been label encoded. Sex and Race have been one-label encoded.")
 st.dataframe(df)
 
 

@@ -85,4 +85,5 @@ plt.show()
 #save the model for deployment
 joblib.dump(clf, "heart_disease_decision_tree.joblib")
 joblib.dump(df, "heart_disease_dataframe.joblib")
+joblib.dump(feature_importance, "feature_importance.joblib")
 print("Model saved as heart_disease_decision_tree.joblib")

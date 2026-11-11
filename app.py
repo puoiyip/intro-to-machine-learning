@@ -1,5 +1,6 @@
 import streamlit as st
 import joblib
+import pandas as pd 
 
 #load model 
 model = joblib.load("heart_disease_decision_tree.joblib")
@@ -7,16 +8,34 @@ model = joblib.load("heart_disease_decision_tree.joblib")
 #set up page configuration (streamlit)
 st.set_page_config(page_title="Heart Disease Predictor")
 st.title("Heart Disease Predictor (made with Girls Who Code)")
+st.text("I created a decision tree that is intends on predicting the likelihood of a patient having heart disease based on a variety of health and demographic factors using data collected from 2020. This current project only shows the accuracy of my model (which was the extent of the project guided by Girls Who Code), but I want to use my model to predict the outome based on user inputs (this is a feature I'm currently working on).")
 
-#user input (risk factors for heart disease)
-bmi = st.text_input("What is your BMI?")
-smoking = st.selectbox("Do you smoke?", ["yes", "no"])
-alcohol_drinking = st.selectbox("Do you drink alcohol?", ["yes", "no"])
-sex = st.selectbox("What is your sex?", ["female", "male"])
-physical_activity = st.selectbox("Are you physically active?", ["yes", "no"])
-gen_health = st.number_input("How good is your health, from 1 being poor health to 5 being excellent health?", 1, 5)
-race = st.multiselect("What is your race? Select all that apply.", ["American Indian/Alaskan Native", "Asian", "Black", "Hispanic", "White", "Other"])
+#USER INPUT STUFF FOR NEW FEATURE
 
-#button
-#bmi, smoking, alcohol drinking, age category, physical activity, gen health, sex (one hot), race (one hot)
+# #user input (risk factors for heart disease)
+# bmi_input = st.text_input("What is your BMI?")
+# smoking = st.selectbox("Do you smoke?", ["yes", "no"])
+# alcohol_drinking = st.selectbox("Do you drink alcohol?", ["yes", "no"])
+# sex = st.selectbox("What is your sex?", ["female", "male"])
+# age_category = st.selectbox("Select your age category.", ["18-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74", "75-79", "80 or older"])
+# race = st.multiselect("What is your race? Select all that apply.", ["American Indian/Alaskan Native", "Asian", "Black", "Hispanic", "White", "Other"])
+# physical_activity = st.selectbox("Are you physically active?", ["yes", "no"])
+# gen_health = st.number_input("How good is your health, from 1 being poor health to 5 being excellent health?", 1, 5)
+
+# #button
 # if st.button("Analyze Data"):
+#     bmi = float(bmi_input) if isinstance(bmi_input, str) else st.warning("Please enter a numeric value.")
+#     user_data = {
+#         "BMI": [bmi],
+#         "Smoking": [smoking],
+#         "AlcoholDrinking": [alcohol_drinking],
+#         "Sex": [sex],
+#         "AgeCategory": [age_category],
+#         "Race": [race],
+#         "PhysicalActivity": [physical_activity],
+#         "GenHealth": [gen_health]
+#     }
+#     df = pd.DataFrame(user_data)
+#     prediction = model.predict(user_data)
+#     label = "likely to develop heart disease" if prediction else "not likely to develop heart disease"
+#     st.success(f"Prediction: {label}")

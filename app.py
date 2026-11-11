@@ -29,6 +29,13 @@ st.subheader("Feature Importance")
 st.text("The bar chart below shows the distribution of feature importance, the impact of each variable on the model's predictions. ")
 st.bar_chart(feature_importance)
 
+#accuracy of the models
+test_acc = joblib.load("test_acc.joblib")
+train_acc = joblib.load("train_acc.joblib")
+st.subheader("Model Accuracy")
+st.text("The accuracy with the testing data set of the Decision Tree is: " + str(test_acc))
+st.text("The accuracy with the training data set of the Decision Tree is: " + str(train_acc))
+
 #USER INPUT STUFF FOR NEW FEATURE
 
 # #user input (risk factors for heart disease)

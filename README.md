@@ -1,6 +1,6 @@
 # CardioTree (Heart Disease Predictor)
 ## How to Run
-
+Use this link: https://intro-to-machine-learning-5c8jz9gwehlkjbthuigdfq.streamlit.app/
 ## How the Project was Made
 This project was made primarily by following the instructions from course 3 of Girls Who Code's Data Science & AI track: Intro to Machine Learning. It was first made using GWC's TextJam IDE (hence why I pasted a huge chunk of code on my first commit). This model uses Python and several libraries including Pandas, Matplotlib, and Scikit Learn to analyze, graph, and train the machine learning model. 
 
